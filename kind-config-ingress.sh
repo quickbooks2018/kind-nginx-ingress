@@ -4,15 +4,6 @@
 # node-labels only allow the ingress controller to run on a specific node(s) matching the label selector
 # https://kind.sigs.k8s.io/docs/user/ingress/
 
-#####################
-# Eksctl instaalation
-#####################
-curl -# -LO https://github.com/weaveworks/eksctl/releases/download/v0.130.0/eksctl_Linux_amd64.tar.gz
-tar -xzvf eksctl_Linux_amd64.tar.gz
-chmod +x eksctl
-mv eksctl /usr/local/bin/
-eksctl version
-rm -f eksctl_Linux_amd64.tar.gz
 
 ######################################
 # Docker & Docker Compose Installation
