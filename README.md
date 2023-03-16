@@ -53,6 +53,14 @@ helm template -f hello/values.yaml --namespace app --create-namespace hello/ --d
 helm upgrade --install hello -f hello/values.yaml --namespace app --create-namespace hello/ --wait
 ```
 
+- helm create hello2
+
+- helm install hello2
+
+```helm
+helm upgrade --install hello2 -f hello2/values.yaml --namespace app2 --create-namespace hello2/ --wait
+```
+
 - Ingress Classes
 ```ingress
 kubectl get ingressclasses
