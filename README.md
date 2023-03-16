@@ -57,3 +57,8 @@ helm upgrade --install hello -f hello/values.yaml --namespace app --create-names
 ```ingress
 kubectl get ingressclasses
 ```
+
+- SSH Tunnel
+```ssh
+ssh -NL 8443:0.0.0.0:8443 cloud_user@<IP>
+```
