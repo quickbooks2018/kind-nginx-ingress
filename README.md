@@ -66,7 +66,12 @@ helm upgrade --install hello2 -f hello2/values.yaml --namespace app2 --create-na
 kubectl get ingressclasses
 ```
 
-- SSH Tunnel
+- SSH Tunnel for Kubernes API Access
 ```ssh
 ssh -NL 8443:0.0.0.0:8443 cloud_user@<IP>
+```
+
+- SSH Tunnel for Ingress Access
+```ssh
+ssh -NL 80:0.0.0.0:80 cloud_user@<IP>
 ```
