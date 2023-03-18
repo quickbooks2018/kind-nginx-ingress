@@ -1,5 +1,7 @@
 # nginx ingress controller
 
+- alb ingress https://github.com/quickbooks2018/aws-eks-blueprints
+
 - helm repo add
 ```helm
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
