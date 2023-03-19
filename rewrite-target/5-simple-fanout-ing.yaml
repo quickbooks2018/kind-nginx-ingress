@@ -5,7 +5,7 @@ metadata:
   name: simple-fanout
   namespace: staging
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: external-nginx
   rules:
