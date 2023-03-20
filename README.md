@@ -2,6 +2,8 @@
 
 - alb ingress https://github.com/quickbooks2018/aws-eks-blueprints
 
+- Supported Versions table https://github.com/kubernetes/ingress-nginx/
+
 - helm repo add
 ```helm
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
