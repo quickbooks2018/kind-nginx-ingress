@@ -4,6 +4,10 @@
 
 - Supported Versions table https://github.com/kubernetes/ingress-nginx/
 
+```nginx
+ kubectl exec ingress-nginx-controller-6bccc5966-bdbjt -n ingress-nginx -- nginx -v
+ ```
+
 - helm repo add
 ```helm
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
