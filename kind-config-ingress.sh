@@ -36,7 +36,7 @@ helm version
 ###################
 # Kind Installation
 ###################
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-linux-amd64
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.18.0/kind-linux-amd64
 # curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.0/kind-linux-amd64
 
 # Latest Version
@@ -83,6 +83,9 @@ nodes:
     nodeRegistration:
       kubeletExtraArgs:
         node-labels: "ingress-ready=true"
+        eviction-hard: "memory.available<5%"
+        system-reserved: "memory=1Gi"
+        kube-reserved: "memory=1Gi"
   extraPortMappings:
   - containerPort: 80
     hostPort: 80
@@ -91,10 +94,26 @@ nodes:
     hostPort: 443
     protocol: TCP
 - role: worker
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        eviction-hard: "memory.available<5%"
+        system-reserved: "memory=1Gi"
+        kube-reserved: "memory=1Gi"
 - role: worker
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        eviction-hard: "memory.available<5%"
+        system-reserved: "memory=1Gi"
+        kube-reserved: "memory=1Gi"
 EOF
   
- kind create --name cloudgeeks cluster --config kind-config.yaml --image kindest/node:v1.25.3
+ kind create --name cloudgeeks cluster --config kind-config.yaml --image kindest/node:v1.25.8
  
  
   export KUBECONFIG=".kube/config"
