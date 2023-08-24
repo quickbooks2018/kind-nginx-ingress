@@ -111,6 +111,15 @@ nodes:
         eviction-hard: "memory.available<5%"
         system-reserved: "memory=1Gi"
         kube-reserved: "memory=1Gi"
+- role: worker
+  kubeadmConfigPatches:
+  - |
+    kind: JoinConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        eviction-hard: "memory.available<5%"
+        system-reserved: "memory=1Gi"
+        kube-reserved: "memory=1Gi"        
 EOF
   
  kind create --name cloudgeeks cluster --config kind-config.yaml --image kindest/node:v1.27.2
