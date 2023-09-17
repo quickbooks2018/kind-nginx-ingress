@@ -4,6 +4,13 @@
 
 - Supported Versions table https://github.com/kubernetes/ingress-nginx/
 
+- metrics server installation
+```bash
+helm repo add metrics-server https://kubernetes-sigs.github.io/metrics-server/
+helm repo update
+helm upgrade --install --set args={--kubelet-insecure-tls} metrics-server metrics-server/metrics-server --namespace kube-system
+```
+
 ```nginx
  kubectl exec ingress-nginx-controller-6bccc5966-bdbjt -n ingress-nginx -- nginx -v
  ```
