@@ -26,7 +26,9 @@ helm search repo ingress-nginx/ingress-nginx --versions
 helm show chart ingress-nginx/ingress-nginx --version 4.8.2
 helm show readme ingress-nginx/ingress-nginx --version 4.8.2
 helm show values ingress-nginx/ingress-nginx --version 4.8.2
+helm show values ingress-nginx/ingress-nginx --version 4.8.2 > ingress-nginx-values.yaml
 helm show all ingress-nginx/ingress-nginx --version 4.8.2
+helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx --version 4.8.2 --namespace ingress-nginx --create-namespace --values ingress-nginx-values.yaml
 ```
 
 - helm repo list
