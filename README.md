@@ -17,8 +17,16 @@ helm upgrade --install --set args={--kubelet-insecure-tls} metrics-server metric
 
 - helm repo add
 ```helm
+helm ls
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
+helm search repo ingress-nginx
+helm show values ingress-nginx/ingress-nginx
+helm search repo ingress-nginx/ingress-nginx --versions
+helm show chart ingress-nginx/ingress-nginx --version 4.8.2
+helm show readme ingress-nginx/ingress-nginx --version 4.8.2
+helm show values ingress-nginx/ingress-nginx --version 4.8.2
+helm show all ingress-nginx/ingress-nginx --version 4.8.2
 ```
 
 - helm repo list
