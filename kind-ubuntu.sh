@@ -122,7 +122,7 @@ nodes:
         kube-reserved: "memory=1Gi"        
 EOF
   
- kind create --name cloudgeeks cluster --config kind-config.yaml --image kindest/node:v1.27.2
+ kind create --name cloudgeeks cluster --config kind-config.yaml --image kindest/node:v1.28.0
  
  
   export KUBECONFIG=".kube/config"
